@@ -1,0 +1,14 @@
+SELECT NOW() as time, age, COUNT(age) as das FROM selfiedashboard GROUP BY age ORDER BY COUNT(age) DESC;
+
+select now() as time, age as edades, count (age) as metric from selfiedashboard grop by metric;
+
+SELECT NOW() as time, age as metric, COUNT(age) as value FROM selfiedashboard GROUP BY age ORDER BY COUNT(metric) DESC;
+
+SELECT
+  NOW() as time,
+  age as metric,
+  COUNT(age) as valor,
+  CONVERT (age, char(2)) as nombres
+FROM selfiedashboard
+GROUP BY age 
+ORDER BY (age) DESC;
