@@ -8,32 +8,6 @@
         "env": []
     },
     {
-        "id": "1872392171b03823",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "192.168.15.101",
-        "port": "1883",
-        "clientid": "expo-3326",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
-    },
-    {
         "id": "68222b15d24eb1ce",
         "type": "mqtt in",
         "z": "fd119ba71e28997e",
@@ -351,14 +325,14 @@
                 "p": "payload"
             }
         ],
-        "repeat": "",
+        "repeat": "180",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "192.168.15.101",
         "payloadType": "str",
-        "x": 180,
+        "x": 190,
         "y": 480,
         "wires": [
             [
@@ -552,5 +526,31 @@
                 "871e0bdd30278b9e"
             ]
         ]
+    },
+    {
+        "id": "1872392171b03823",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.15.101",
+        "port": "1883",
+        "clientid": "expo-3326",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
     }
 ]
