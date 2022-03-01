@@ -34,15 +34,15 @@
         "type": "debug",
         "z": "fd119ba71e28997e",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 530,
-        "y": 20,
+        "x": 510,
+        "y": 40,
         "wires": []
     },
     {
@@ -181,7 +181,10 @@
         "x": 660,
         "y": 160,
         "wires": [
-            []
+            [
+                "a9cba441885c6904",
+                "295c523a5baec8b7"
+            ]
         ]
     },
     {
@@ -198,8 +201,8 @@
         "correl": "",
         "expiry": "",
         "broker": "1872392171b03823",
-        "x": 1200,
-        "y": 120,
+        "x": 1180,
+        "y": 180,
         "wires": []
     },
     {
@@ -272,8 +275,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1170,
-        "y": 80,
+        "x": 1150,
+        "y": 300,
         "wires": []
     },
     {
@@ -287,8 +290,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1180,
-        "y": 200,
+        "x": 1160,
+        "y": 240,
         "wires": [
             []
         ]
@@ -322,36 +325,18 @@
                 "p": "payload"
             }
         ],
-        "repeat": "180",
+        "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "192.168.15.101",
         "payloadType": "str",
-        "x": 190,
+        "x": 180,
         "y": 480,
         "wires": [
             [
                 "871e0bdd30278b9e"
-            ]
-        ]
-    },
-    {
-        "id": "871e0bdd30278b9e",
-        "type": "ping",
-        "z": "fd119ba71e28997e",
-        "protocol": "IPv4",
-        "mode": "triggered",
-        "name": "",
-        "host": "",
-        "timer": "20",
-        "inputs": 1,
-        "x": 450,
-        "y": 480,
-        "wires": [
-            [
-                "59313ed8dcef692b"
             ]
         ]
     },
@@ -447,7 +432,7 @@
         "type": "function",
         "z": "fd119ba71e28997e",
         "name": "",
-        "func": "if (msg.payload > 0) {\n    if (global.get (\"archivo\") == 2) {\n        global.set (\"archivo\", 0);\n        return msg;\n    }\n    global.set (\"archivo\", 0);\n} else if (global.get (\"archivo\") == 0) {\n    global.set (\"archivo\", 1);\n    return msg;\n}\n",
+        "func": "if (msg.payload > 0) {\n    if (global.get (\"trying\") == 1) {\n        global.set (\"archivo\", 0);\n        global.set (\"trying\", 0);\n        return msg;\n    }\n    global.set (\"archivo\", 0);\n} else if (global.get (\"archivo\") == 0) {\n    global.set (\"archivo\", 1);\n    global.set (\"trying\", 1);\n    return msg;\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -467,7 +452,7 @@
         "type": "function",
         "z": "fd119ba71e28997e",
         "name": "5, force kill",
-        "func": "if (global.get (\"archivo\") == 1) {\n    global.set (\"archivo\", 2);\n    msg.payload = \"killall vlc\";\n    return msg;\n} else if (global.get (\"archivo\") == 0) {\n    msg.payload = \"killall vlc\";\n    return msg;\n}\n",
+        "func": "if (global.get (\"archivo\") == 1) {\n    global.set (\"archivo\", 2);\n    msg.payload = \"killall vlc\";\n    return msg;\n} else if (global.get (\"archivo\") == 0) {\n    msg.payload = \"killall vlc\";\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -506,10 +491,10 @@
         "type": "function",
         "z": "fd119ba71e28997e",
         "name": "",
-        "func": "global.set (\"archivo\", 0);\nglobal.set (\"process\", \"recall\");\nreturn msg;",
+        "func": "",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "",
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nglobal.set (\"archivo\", 0);\nglobal.set (\"trying\", 0);\nglobal.set (\"process\", \"recall\");",
         "finalize": "",
         "libs": [],
         "x": 320,
@@ -519,12 +504,30 @@
         ]
     },
     {
+        "id": "871e0bdd30278b9e",
+        "type": "ping",
+        "z": "fd119ba71e28997e",
+        "protocol": "IPv4",
+        "mode": "triggered",
+        "name": "",
+        "host": "",
+        "timer": "20",
+        "inputs": 1,
+        "x": 450,
+        "y": 480,
+        "wires": [
+            [
+                "59313ed8dcef692b"
+            ]
+        ]
+    },
+    {
         "id": "1872392171b03823",
         "type": "mqtt-broker",
         "name": "",
         "broker": "192.168.15.101",
         "port": "1883",
-        "clientid": "expo-3325",
+        "clientid": "expo-3326",
         "autoConnect": true,
         "usetls": false,
         "protocolVersion": "4",
