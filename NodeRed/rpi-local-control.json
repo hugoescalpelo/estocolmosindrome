@@ -8,6 +8,32 @@
         "env": []
     },
     {
+        "id": "1872392171b03823",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.15.101",
+        "port": "1883",
+        "clientid": "expo-3326",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
         "id": "68222b15d24eb1ce",
         "type": "mqtt in",
         "z": "fd119ba71e28997e",
@@ -34,7 +60,7 @@
         "type": "debug",
         "z": "fd119ba71e28997e",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -229,7 +255,7 @@
         "type": "function",
         "z": "fd119ba71e28997e",
         "name": "3, play",
-        "func": "if (global.get (\"archivo\") == 0) {\n    msg.payload = \"vlc http://192.168.15.101:8080 --fullscreen --play-and-exit &\";\n    return msg;\n} else if (global.get (\"archivo\") == 2) {\n    msg.payload = \"vlc /home/pi/Downloads/reconnect.mp4 --fullscreen --loop &\";\n    return msg;\n}\n",
+        "func": "if (global.get (\"archivo\") == 0) {\n    msg.payload = \"vlc http://192.168.15.101:8080 --fullscreen --play-and-exit &\";\n    global.set (\"archivo\", 2);\n    return msg;\n} else if (global.get (\"archivo\") == 1) {\n    if (global.get (\"trying\") == 0) {\n        msg.payload = \"vlc http://192.168.15.101:8080 --fullscreen --play-and-exit &\";\n    } else if (global.get (\"trying\") == 1) {\n        msg.payload = \"vlc /home/pi/Downloads/reconnect.mp4 --fullscreen --play-and-exit --loop &\";\n    }\n    global.set (\"archivo\", 2);\n    return msg;\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -284,7 +310,7 @@
         "type": "function",
         "z": "fd119ba71e28997e",
         "name": "",
-        "func": "var check= msg.payload[0] + msg.payload[1] + msg.payload[69];\nif (check == \"pih\") {\n    msg.payload = msg.payload[10] + msg.payload[11] + msg.payload[12] + msg.payload[13];\n    global.set (\"process\", msg.payload);\n    return msg;\n} else {\n    global.set (\"process\", \"recall\");\n    msg.payload = \"recall\";\n    return msg;\n}\n",
+        "func": "var check= msg.payload[0] + msg.payload[1] + msg.payload[69];\nif (check == \"pih\") {\n    msg.payload = msg.payload[10] + msg.payload[11] + msg.payload[12] + msg.payload[13];\n    global.set (\"process\", msg.payload);\n    return msg;\n} else {\n    //global.set (\"process2\", global.get (\"process\"));\n    global.set (\"process\", \"recall\");\n    msg.payload = \"recall\";\n    return msg;\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -353,8 +379,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 890,
-        "y": 440,
+        "x": 910,
+        "y": 540,
         "wires": []
     },
     {
@@ -362,7 +388,7 @@
         "type": "function",
         "z": "fd119ba71e28997e",
         "name": "if off, play",
-        "func": "if (global.get (\"process\") == \"recall\") {\n    msg.payload = 3;\n    return msg;\n}\n",
+        "func": "if (global.get (\"process\") == \"recall\") {\n    if (global.get (\"archivo\") == 2)\n    {\n       msg.payload = 2;\n        return msg; \n    } else if (global.get (\"archivo\") == 1){\n        msg.payload = 3;\n        return msg;\n    }\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -432,7 +458,7 @@
         "type": "function",
         "z": "fd119ba71e28997e",
         "name": "",
-        "func": "if (msg.payload > 0) {\n    if (global.get (\"trying\") == 1) {\n        global.set (\"archivo\", 0);\n        global.set (\"trying\", 0);\n        return msg;\n    }\n    global.set (\"archivo\", 0);\n} else if (global.get (\"archivo\") == 0) {\n    global.set (\"archivo\", 1);\n    global.set (\"trying\", 1);\n    return msg;\n}\n",
+        "func": "if (msg.payload > 0) {\n    global.set (\"pingNow\", 1);\n} else {\n    global.set (\"pingNow\", 0);\n}\nif (global.get (\"pingLast\") != global.get (\"pingNow\")) {\n    global.set (\"archivo\", 1);\n    msg.payload = \"killall vlc\";\n    global.set (\"pingLast\", global.get (\"pingNow\"));\n    if (global.get (\"pingNow\") == 0) {\n        global.set (\"trying\", 1);\n    } else if (global.get (\"pingNow\") > 0) {\n        global.set (\"trying\", 0);\n    }\n    return msg;\n} else if (global.get (\"archivo\") == 1 && global.get (\"trying\") == 1) {\n    msg.payload = \"killall vlc\";\n    if (global.get (\"pingNow\") == 0) {\n        global.set (\"trying\", 1);\n    } else if (global.get (\"pingNow\") > 0) {\n        global.set (\"trying\", 0);\n    }\n    return msg;\n}\n\n/*\nif (msg.payload > 0) {\n    if (global.get (\"trying\") == 1) {\n        global.set (\"archivo\", 0);\n        global.set (\"trying\", 0);\n        return msg;\n    }\n    global.set (\"archivo\", 0);\n} else if (global.get (\"archivo\") == 0) {\n    global.set (\"archivo\", 1);\n    global.set (\"trying\", 1);\n    //global.set (\"process\", global.get (\"process2\"));\n    return msg;\n}\n\n\nif (global.get (\"archivo\") == 1) {\n    global.set (\"archivo\", 2);\n    msg.payload = \"killall vlc\";\n    return msg;\n} else if (global.get (\"archivo\") == 0) {\n    msg.payload = \"killall vlc\";\n    return msg;\n}\n\n*/",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -443,25 +469,6 @@
         "wires": [
             [
                 "7209ec92fc815a17",
-                "2f75b623c13166f9"
-            ]
-        ]
-    },
-    {
-        "id": "2f75b623c13166f9",
-        "type": "function",
-        "z": "fd119ba71e28997e",
-        "name": "5, force kill",
-        "func": "if (global.get (\"archivo\") == 1) {\n    global.set (\"archivo\", 2);\n    msg.payload = \"killall vlc\";\n    return msg;\n} else if (global.get (\"archivo\") == 0) {\n    msg.payload = \"killall vlc\";\n    return msg;\n}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 910,
-        "y": 480,
-        "wires": [
-            [
                 "b0df257b429f1539"
             ]
         ]
@@ -478,7 +485,7 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 1170,
+        "x": 890,
         "y": 480,
         "wires": [
             [],
@@ -494,7 +501,7 @@
         "func": "",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\nglobal.set (\"archivo\", 0);\nglobal.set (\"trying\", 0);\nglobal.set (\"process\", \"recall\");",
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nglobal.set (\"archivo\", 1);\nglobal.set (\"trying\", 1);\nglobal.set (\"process\", \"recall\");\nglobal.set (\"pingLast\", 1);\nglobal.set (\"pingNow\", 0);",
         "finalize": "",
         "libs": [],
         "x": 320,
@@ -522,29 +529,28 @@
         ]
     },
     {
-        "id": "1872392171b03823",
-        "type": "mqtt-broker",
+        "id": "d2d2565e5a6ade4a",
+        "type": "inject",
+        "z": "fd119ba71e28997e",
         "name": "",
-        "broker": "192.168.15.101",
-        "port": "1883",
-        "clientid": "expo-3326",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "192.168.15.121",
+        "payloadType": "str",
+        "x": 180,
+        "y": 520,
+        "wires": [
+            [
+                "871e0bdd30278b9e"
+            ]
+        ]
     }
 ]
