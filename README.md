@@ -35,6 +35,7 @@ Para generar un espacio que integre las lógicas de hogar inteligente y pueda mo
 Este proyecto usa el siguiente software para generar el comportamiento deseado en el espacio
 
 - Windows 10 Pro
+- Docker
 - Windows Subsystem for Linux
 
 - NodeJS
