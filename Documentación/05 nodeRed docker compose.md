@@ -20,12 +20,25 @@
         code .
         ```
 2. Agregar la configuración del contenedor de nodeRed
-```
-nodered:
-    image: nodered/node-red
-    restart: always
-    volumes:
-      - /home/hugoe/nodered/data:/data
-    ports:
-      - 1880:1880
-```
+    ```
+    nodered:
+        image: nodered/node-red
+        restart: always
+        volumes:
+        - /home/hugoe/nodered/data:/data
+        ports:
+        - 1880:1880
+    ```
+3. Crear la carpeta de datos de nodered
+    - Dirigirse a la carpeta home
+    - ```mkdir -p nodered/data```
+4. Ejecutar la nueva configuración
+    
+    ```sudo docker-compose up -d```
+
+## Compobar el funcionamiento de NodeRed
+
+- Abrir un navegador en ```localhost:1880```
+
+**Fuentes**
+- Permisos de nodeRed en docker https://github.com/node-red/node-red-docker/wiki/Permissions-and-Persistence
