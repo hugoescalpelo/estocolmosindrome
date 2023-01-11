@@ -17,4 +17,5 @@
     - Dirigirse al directorio donde está docker-compose.yaml
 
         <code>cd compose</code>
+        
         <code>code .</code>
