@@ -1,5 +1,17 @@
 # Agregar contraseña a mosquitto en docker
 
+## Requisitos
+
+- Windows
+- Docker Desktop. La versión de Windows ya incluye docker-compose (opcional).
+- WSL2
+- Ubuntu (WSL2 para )
+- Activar la integración de Ubuntu en Docker Desktop
+- Visual Studio Code
+- Windows Terminal
+
+# Instrucciones
+
 1. Modificar el archivo mosquitto.conf
     - Abrir una terminal de Ubunto en Windows Terminal
     - <code>sudo nano ~/mosquitto/config/mosquitto.conf</code>
