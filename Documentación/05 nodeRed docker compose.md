@@ -40,5 +40,16 @@
 
 - Abrir un navegador en ```localhost:1880```
 
+## Agregar contraseña a NodeRed
+
+1. Abrir el documento settings.js ubicado en ~/nodered/data
+2. Descomentar la sección adminAuth:
+3. Generar una nueva contraseña desde una terminal en el contenedor de nodered con el comando ```node-red admin hash-pw```
+4. Pegar en la sección de password del archivo settings.js el hash creado en el paso anterior.
+5. Guardar los cambios en el archivo settings.js
+6. Reiniciar el contenedor de node-red
+7. Entrar a localhost:1880 desde un navegador en la computadora donde está instalado node-red con Docker y colocar la contraseña para acceder a los flows.
+
 **Fuentes**
 - Permisos de nodeRed en docker https://github.com/node-red/node-red-docker/wiki/Permissions-and-Persistence
+- Seguridad en NodeRed https://nodered.org/docs/user-guide/runtime/securing-node-red
