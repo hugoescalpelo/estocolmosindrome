@@ -17,16 +17,19 @@ Docker Compose es un software para la configuración, instalación y ejecución 
 1. Abrir una terminal de Ubuntu en Windows
 2. Crear una carpeta en el directorio Home y entrar. Nota: El nombre es arbitrario.
 
-    <code>mkdir compose
-
-    cd compose</code>
+    ```
+    mkdir compose
+    cd compose
+    ```
 3. Abrir Visual Studio Code en ese directorio.
 
-    <code>code .</code>
+   ```
+   code .
+   ```
 4. Crear el archivo docker-compose.yaml haciendo clic en el boton de agregar achivo en el panel de directorio.
 5. Crear el archivo mosquitto.conf en el directorio config. 
 
-    Ejemplo: <code>/home/username/mosquitto/config/mosquitto.conf</code> cuando la configuración del volumen para config es <code>/home/hugoe/mosquitto/config:/mosquitto/config</code>
+    Ejemplo: ```/home/username/mosquitto/config/mosquitto.conf``` cuando la configuración del volumen para config es ```/home/hugoe/mosquitto/config:/mosquitto/config```
     
 6. Correr el achirvo docker-compose.yaml
 
@@ -38,9 +41,10 @@ Docker Compose es un software para la configuración, instalación y ejecución 
 
     - Correr los siguientes comandos en una terminal del contenedor. Cada uno de los comandos debe ejecutarse en una terminal diferente.
 
-        <code>mosquitto_sub -h localhost -t hugo/test
-        
-        mosquitto_pub -h localhost -t hugo/test -m "hola mosquitto"</code>
+        ```
+        mosquitto_sub -h localhost -t hugo/test
+        mosquitto_pub -h localhost -t hugo/test -m "hola mosquitto"
+        ```
 
     Debe verse el mensaje enviado por la terminal del segundo comando en la terminal del primer comando.
 
@@ -49,9 +53,10 @@ Docker Compose es un software para la configuración, instalación y ejecución 
         <code>docker exec id_del_contenedor comando_a_ejecutar</code>
 
 ## Contenido de mosquitto.conf
-<code>listener 1883 0.0.0.0
-
-allow_anonymous true</code>
+```
+listener 1883 0.0.0.0
+allow_anonymous true
+```
 
 
 ## Documentación

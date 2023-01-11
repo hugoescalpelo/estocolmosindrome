@@ -14,16 +14,17 @@
 
 1. Modificar el archivo mosquitto.conf
     - Abrir una terminal de Ubunto en Windows Terminal
-    - <code>sudo nano ~/mosquitto/config/mosquitto.conf</code>
+    - ```sudo nano ~/mosquitto/config/mosquitto.conf```
     - Debe contener lo siguiente
-
-        <code>listener 1883 0.0.0.0</code>        
-        <code>allow_anonymous false</code>
-       <code> password_file /mosquitto/config/passwordfile</code>
+        ```
+        listener 1883 0.0.0.0        
+        allow_anonymous false</code>
+        password_file /mosquitto/config/passwordfile
+        ```
 
 2. Crear el archivo de contraseñas en una terminal del contenedor mosquitto en el directorio /mosquitto/config del contenedor
 
-<code>osquitto_passwd -c passwordfile nombre_de_usuario</code>
+```mosquitto_passwd -c passwordfile nombre_de_usuario```
 
 3. Reiniciar el contenedor
 
@@ -33,11 +34,11 @@ A continuación se muestran los comandos a ejecutar para comprobar el funcionami
 
 Ubuntu Shell:
 
-<code>docker exec id_del_contenedor mosquitto_sub -h localhost -t hugo/test -u nombre_de_usuario -P contraseña</code>
+```docker exec id_del_contenedor mosquitto_sub -h localhost -t hugo/test -u nombre_de_usuario -P contraseña```
 
 Ubuntu shell:
 
-<code>docker exec id_del_contenedor mosquitto_pub -h localhost -t hugo/test -m "hola mosquitto contraseña" -u nombre_de_usuario -P contraseña</code>
+```docker exec id_del_contenedor mosquitto_pub -h localhost -t hugo/test -m "hola mosquitto contraseña" -u nombre_de_usuario -P contraseña```
 
 ### Documentación
 

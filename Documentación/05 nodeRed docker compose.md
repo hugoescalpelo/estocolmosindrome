@@ -15,7 +15,17 @@
 1. Abrir el archivo docker-compose en visual studio code
     - Abrir una terminal Ubuntu en Windows Terminal
     - Dirigirse al directorio donde está docker-compose.yaml
-
-        <code>cd compose</code>
-        
-        <code>code .</code>
+        ```
+        cd compose
+        code .
+        ```
+2. Agregar la configuración del contenedor de nodeRed
+```
+nodered:
+    image: nodered/node-red
+    restart: always
+    volumes:
+      - /home/hugoe/nodered/data:/data
+    ports:
+      - 1880:1880
+```
