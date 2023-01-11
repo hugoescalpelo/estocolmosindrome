@@ -15,5 +15,6 @@
 1. Abrir el archivo docker-compose en visual studio code
     - Abrir una terminal Ubuntu en Windows Terminal
     - Dirigirse al directorio donde está docker-compose.yaml
+
         <code>cd compose</code>
-        
+        <code>code .</code>
