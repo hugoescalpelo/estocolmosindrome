@@ -40,7 +40,7 @@
 
 Para acceder a la linea de commandos de MySQL Server, debes abrir una terminal de Ubuntu en Windows Terminal y ejecutar el siguiente comando. Deberás proporcionar la contraseña que configuraste en el archivo docker-compose.yaml
 
-- docker exec -it <mysql-container-id> mysql -p
+```docker exec -it mysql-container-id mysql -p```
 
 ## Fuente
 
