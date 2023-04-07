@@ -26,7 +26,7 @@
     ports:
       - "3000:3000"
     networks:
-      - localnetwork01
+      - network_1
     ```
 3. Ejecutar la nueva configuración
     
@@ -47,7 +47,7 @@ Al acceder al sitio local de grafana por primera vez, usa el nombre de usuario y
 admin_user = admin
 admin_password = admin
 ```
-Se te solicitará crear una nueva contraseña. Guardarla en un lugar seguro.
+Se te solicitará crear una nueva contraseña. Guardarla en un lugar seguro. La usaras varias veces.
 
 ## Fuente
 
