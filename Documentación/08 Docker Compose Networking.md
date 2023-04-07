@@ -1,5 +1,5 @@
 
-## DIreccionamiento
+## Direccionamiento
 
 En lugar de escribir localhost para enviar un mensaje entre contenedores corriento en el mismo equipo, es necesario usar como nombre de host el nombre del servicio.
 
