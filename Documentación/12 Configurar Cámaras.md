@@ -38,7 +38,9 @@ A continuación se muestra el circuito a realizar para programar el modulo ESP32
 6. Realiza el circuito para programar el ESP32CAM.
 - Realiza el siguiente circuito para programar el ESP32CAM.
 
-![]()
+![](https://github.com/hugoescalpelo/estocolmosindrome/blob/main/Circuitos/01%20Circuito%20para%20programar%20ESP32CAM.png?raw=true)
+![](https://github.com/hugoescalpelo/estocolmosindrome/blob/main/Imagenes/001%20Circuito%20c%C3%A1mara.png?raw=true)
+
 
 **Nota**: En esta imagen se muestra el circuito que configura el esp32CAM en modo programador. Se puede identificar porque el puerto GPIO0 está conectado con GND. Para probar el circuito, será necesario desconectar estos pines.
 7. Conecta el circuito a tu computadora
@@ -91,7 +93,10 @@ Puedes comprobar el funcionamiento de cada cámara con los siguientes pasos.
 - Si aun tienes conectado el micro controlador por USB, podrás abrir el monitor serial y comprobar que se ha realizado la conexión a WiFi y ver la IP a la que se ha conectado cada cámara luego de presionar el boton reset del micro controlador.
 - Visita la IP de cada cámara, podrás ver la página de configuración de la cámara. Para ver el video, haz clic en el boton Start Streaming. No es encesario que realices ninguna configuración manual aqui. Las configuraciones necesarias se realizaran via API en NodeRed.
 
-![]()
+![](https://github.com/hugoescalpelo/estocolmosindrome/blob/main/Imagenes/002%20Base.png?raw=true)
+![](https://github.com/hugoescalpelo/estocolmosindrome/blob/main/Imagenes/003%20Base%202.png?raw=true)
+![](https://github.com/hugoescalpelo/estocolmosindrome/blob/main/Imagenes/004%20Base%203.png?raw=true)
+![](https://github.com/hugoescalpelo/estocolmosindrome/blob/main/Imagenes/005%20Adaptador.png?raw=true)
 
 ## Uso recomendado
 
