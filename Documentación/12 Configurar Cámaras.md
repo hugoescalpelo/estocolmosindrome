@@ -57,16 +57,16 @@ A continuación se muestra el circuito a realizar para programar el modulo ESP32
 
 
 **Nota**: En esta imagen se muestra el circuito que configura el esp32CAM en modo programador. Se puede identificar porque el puerto GPIO0 está conectado con GND. Para probar el circuito, será necesario desconectar estos pines.
-7. Conecta el circuito a tu computadora
+8. Conecta el circuito a tu computadora
 - Conecta el cable USB mini al FTDI.
 - Si configuraste Arduino en tu sistema operativo nativo, podras realizar la selección del puerto usb para programar el ESP32CAM en el siguiente paso sin problema
 - Si usas una máquina virtual, reenvia el FTDI a de tu sistema operativo anfitrion a tu sistema operativo virtualizado en este momento. Para hacerlo en Virtual Box, haz clic en el boton Dispositivos > USB y selecciona el FTDI. Realiza este paso las veces que sea necesario para que el FTDI aparezca en tu sistema operativo virtualizado.
-8. Selecciona el puerto USB para programar el ESP32CAM
+9. Selecciona el puerto USB para programar el ESP32CAM
 - Haz clic en el boton Herramientas de la IDE de Arduino y selecciona el puerto USB de tu ESP32CAM. 
 - Puede aparecer nombrado como FTDI, CH430, Quing Hong, Etc.
 - En Windows puede ser nombrado como `COM3` u otro puerto COM.
 - En Linux y Mac, puede ser nombrado como `dev/ttyUSB0`
-9. Deja el resto de las configuraciones con su valor predeterminado
+10. Deja el resto de las configuraciones con su valor predeterminado
 
 ## Carga el programa a cada cámara que vayas a agregar al proyecto
 
