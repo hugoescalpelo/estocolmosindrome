@@ -32,10 +32,24 @@
 - Haz clic en el menú Tarjetas.
 - Selecciona la opción esp32
 - Busca la tarjeta AI-Thinker. **Nota**: Las tarjetas no se encuentran por orden alfabético. La tarjeta se encuentra cerca alrededor del 2/3 de la lista.
+6. Configura los Drivers del ESP32CAM. Ejecuta los siguientes comandos. Estos comandos deben ejecutarse con Arduino IDE cerrado
+
+```
+sudo usermod -a -G dialout $USER
+sudo apt-get install git
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python3 get-pip.py
+sudo pip3 install pyserial
+mkdir -p ~/Arduino/hardware/espressif
+cd ~/Arduino/hardware/espressif
+git clone https://github.com/espressif/arduino-esp32.git esp32
+cd esp32/tools
+python3 get.py
+```
 
 A continuación se muestra el circuito a realizar para programar el modulo ESP32CAM y posteriormente las configuraciones de la tarjeta AI-Thinker.
 
-6. Realiza el circuito para programar el ESP32CAM.
+7. Realiza el circuito para programar el ESP32CAM.
 - Realiza el siguiente circuito para programar el ESP32CAM.
 
 ![](https://github.com/hugoescalpelo/estocolmosindrome/blob/main/Circuitos/01%20Circuito%20para%20programar%20ESP32CAM.png?raw=true)
@@ -43,16 +57,16 @@ A continuación se muestra el circuito a realizar para programar el modulo ESP32
 
 
 **Nota**: En esta imagen se muestra el circuito que configura el esp32CAM en modo programador. Se puede identificar porque el puerto GPIO0 está conectado con GND. Para probar el circuito, será necesario desconectar estos pines.
-7. Conecta el circuito a tu computadora
+8. Conecta el circuito a tu computadora
 - Conecta el cable USB mini al FTDI.
 - Si configuraste Arduino en tu sistema operativo nativo, podras realizar la selección del puerto usb para programar el ESP32CAM en el siguiente paso sin problema
 - Si usas una máquina virtual, reenvia el FTDI a de tu sistema operativo anfitrion a tu sistema operativo virtualizado en este momento. Para hacerlo en Virtual Box, haz clic en el boton Dispositivos > USB y selecciona el FTDI. Realiza este paso las veces que sea necesario para que el FTDI aparezca en tu sistema operativo virtualizado.
-8. Selecciona el puerto USB para programar el ESP32CAM
+9. Selecciona el puerto USB para programar el ESP32CAM
 - Haz clic en el boton Herramientas de la IDE de Arduino y selecciona el puerto USB de tu ESP32CAM. 
 - Puede aparecer nombrado como FTDI, CH430, Quing Hong, Etc.
 - En Windows puede ser nombrado como `COM3` u otro puerto COM.
 - En Linux y Mac, puede ser nombrado como `dev/ttyUSB0`
-9. Deja el resto de las configuraciones con su valor predeterminado
+10. Deja el resto de las configuraciones con su valor predeterminado
 
 ## Carga el programa a cada cámara que vayas a agregar al proyecto
 
