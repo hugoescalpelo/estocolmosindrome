@@ -102,3 +102,4 @@ Puedes comprobar el funcionamiento de cada cámara con los siguientes pasos.
 
 Para operar las cámaras, deben recibir 5V de forma constante. Para esto puedes usar una base para ESP32CAM, un banco de energía USB y un adaptador de corriente o cargador de celular de 5V a 1A. A continuación se muestran multiples opciones.
 
+![](https://github.com/hugoescalpelo/estocolmosindrome/blob/main/Imagenes/006%20Camara%20funcionando.jpg?raw=true)
