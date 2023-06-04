@@ -32,10 +32,24 @@
 - Haz clic en el menú Tarjetas.
 - Selecciona la opción esp32
 - Busca la tarjeta AI-Thinker. **Nota**: Las tarjetas no se encuentran por orden alfabético. La tarjeta se encuentra cerca alrededor del 2/3 de la lista.
+6. Configura los Drivers del ESP32CAM. Ejecuta los siguientes comandos. Estos comandos deben ejecutarse con Arduino IDE cerrado
+
+```
+sudo usermod -a -G dialout $USER
+sudo apt-get install git
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python3 get-pip.py
+sudo pip3 install pyserial
+mkdir -p ~/Arduino/hardware/espressif
+cd ~/Arduino/hardware/espressif
+git clone https://github.com/espressif/arduino-esp32.git esp32
+cd esp32/tools
+python3 get.py
+```
 
 A continuación se muestra el circuito a realizar para programar el modulo ESP32CAM y posteriormente las configuraciones de la tarjeta AI-Thinker.
 
-6. Realiza el circuito para programar el ESP32CAM.
+7. Realiza el circuito para programar el ESP32CAM.
 - Realiza el siguiente circuito para programar el ESP32CAM.
 
 ![](https://github.com/hugoescalpelo/estocolmosindrome/blob/main/Circuitos/01%20Circuito%20para%20programar%20ESP32CAM.png?raw=true)
