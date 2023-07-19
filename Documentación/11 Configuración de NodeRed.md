@@ -34,4 +34,7 @@
     -Nodos Telegram. https://flows.nodered.org/node/node-red-contrib-telegrambot
     - Nodos e-mail. https://flows.nodered.org/node/node-red-node-email
     
-        
+## Referencias
+
+- [Lista de reproducción del proyecto](https://www.youtube.com/watch?v=_F277YnKmog&list=PLm5nY_UPV5A7sAQCkPrWafyoOXLW3rvgx&pp=iAQB)
+- [Tutorial: Desarrollo de proyecto 011 - Agregar nodos adicionales a NodeRed](https://youtu.be/VEtTYzdgwWk)

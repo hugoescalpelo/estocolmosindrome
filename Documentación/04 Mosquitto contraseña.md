@@ -47,3 +47,7 @@ Ubuntu shell:
 - https://mosquitto.org/man/mosquitto_sub-1.html
 - https://mosquitto.org/man/mosquitto_pub-1.html
 
+## Referencias
+
+- [Lista de reproducción del proyecto](https://www.youtube.com/watch?v=_F277YnKmog&list=PLm5nY_UPV5A7sAQCkPrWafyoOXLW3rvgx&pp=iAQB)
+- [Tutorial: Desarrollo de proyecto 005 - Mosquitto MQTT con contraseña en Docker WSL](https://youtu.be/BryZFezDXj0)

@@ -53,3 +53,8 @@
 **Fuentes**
 - Permisos de nodeRed en docker https://github.com/node-red/node-red-docker/wiki/Permissions-and-Persistence
 - Seguridad en NodeRed https://nodered.org/docs/user-guide/runtime/securing-node-red
+
+## Referencias
+
+- [Lista de reproducción del proyecto](https://www.youtube.com/watch?v=_F277YnKmog&list=PLm5nY_UPV5A7sAQCkPrWafyoOXLW3rvgx&pp=iAQB)
+- [Tutorial: Desarrollo de Proyecto 006 - NodeRed Docker Compose WSL](https://youtu.be/iDpIBC3Q8DI)

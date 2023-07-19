@@ -48,3 +48,7 @@ Este ejemplo se asegura de que MySQL y NodeRed puedan interactuar en la misma re
 ## Fuentes
 
 - https://www.youtube.com/watch?v=PXo3AAquPy0
+
+## Referencias
+
+- [Lista de reproducción del proyecto](https://www.youtube.com/watch?v=_F277YnKmog&list=PLm5nY_UPV5A7sAQCkPrWafyoOXLW3rvgx&pp=iAQB)

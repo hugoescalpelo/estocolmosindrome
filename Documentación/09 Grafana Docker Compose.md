@@ -55,3 +55,8 @@ Se te solicitará crear una nueva contraseña. Guardarla en un lugar seguro. La 
 - Página de grafana en docker https://hub.docker.com/r/grafana/grafana/
 - Página de documentación de docker para grafana https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/
 - Página de configuración de docker para grafana https://grafana.com/docs/grafana/latest/setup-grafana/configure-docker/
+
+## Referencias
+
+- [Lista de reproducción del proyecto](https://www.youtube.com/watch?v=_F277YnKmog&list=PLm5nY_UPV5A7sAQCkPrWafyoOXLW3rvgx&pp=iAQB)
+- [Tutorial: Desarrollo de proyecto 008 - Instalación de Grafana](https://youtu.be/80rmYV0KaHM)

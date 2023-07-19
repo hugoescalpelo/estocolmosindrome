@@ -51,3 +51,8 @@ mkdir ai
 ## Pasos siguientes
 
 El servidor de inteligencia artifical se usa para el reconocimiento facial en AgentDVR. Será necesario indicar la IP del servidor y configurar las cámaras.
+
+## Referencias
+
+- [Lista de reproducción del proyecto](https://www.youtube.com/watch?v=_F277YnKmog&list=PLm5nY_UPV5A7sAQCkPrWafyoOXLW3rvgx&pp=iAQB)
+- [Tutorial: Desarrollo de proyecto 013 - Servidor de CodeProject.AI para reconocimiento facial](https://youtu.be/_mnCV-Gkf0c)

@@ -98,3 +98,8 @@ En caso de que la configuración sea correcta, deberás ver el mensaje "Hello Wo
 # Notas
 
 - Volumenes de almacenamiento con Docker https://www.docker.com/get-started/
+
+## Referencias
+
+- [Lista de reproducción del proyecto](https://www.youtube.com/watch?v=_F277YnKmog&list=PLm5nY_UPV5A7sAQCkPrWafyoOXLW3rvgx&pp=iAQB)
+- [Tutorial: Desarrollo de Proyecto 002 - Configuración de Docker 1](https://youtu.be/Ljne-GhgDC0)

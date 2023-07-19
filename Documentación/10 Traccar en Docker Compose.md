@@ -61,4 +61,7 @@
 
     En caso de que no funcione, registra un nuevo usuario con los datos de tu preferencia. Estos datos son completamente locales. No olvides guardar las credenciales en un lugar seguro, las necesitarás mas adelante.
 
+## Referencias
 
+- [Lista de reproducción del proyecto](https://www.youtube.com/watch?v=_F277YnKmog&list=PLm5nY_UPV5A7sAQCkPrWafyoOXLW3rvgx&pp=iAQB)
+- [Tutorial: Desarrollo de proyecto 010 - Traccar con Docker Compose](https://youtu.be/7bo0OQqjoFg)

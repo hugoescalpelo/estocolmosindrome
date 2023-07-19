@@ -32,3 +32,8 @@ PowerShell:
 - https://docs.docker.com/desktop/windows/wsl/
 - https://learn.microsoft.com/en-us/windows/wsl/install
 - https://learn.microsoft.com/es-mx/windows/wsl/-install-manual#step-4---download-the-linux-kernel-update-package
+
+## Referencias
+
+- [Lista de reproducción del proyecto](https://www.youtube.com/watch?v=_F277YnKmog&list=PLm5nY_UPV5A7sAQCkPrWafyoOXLW3rvgx&pp=iAQB)
+- [Tutorial: Desarrollo de proyecto 003 - Configuración de WSL](https://youtu.be/HiNEgwn-EPQ)

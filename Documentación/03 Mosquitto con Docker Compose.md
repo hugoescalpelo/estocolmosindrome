@@ -71,3 +71,8 @@ https://docs.docker.com/compose/compose-file/
 - Origen del archivo mosquitto.conf https://github.com/eclipse/mosquitto/blob/master/docker/2.0/mosquitto-no-auth.conf
 - Crear usuarios con contraseña https://github.com/vvatelot/mosquitto-docker-compose
 - Mosquitto con plugins de autentificación https://github.com/jllopis/docker-mosquitto/blob/master/docker-compose.yml
+
+## Referencias
+
+- [Lista de reproducción del proyecto](https://www.youtube.com/watch?v=_F277YnKmog&list=PLm5nY_UPV5A7sAQCkPrWafyoOXLW3rvgx&pp=iAQB)
+- [Tutorial: Desarrollo de proyecto 004 - Configuración de Docker Composer](https://youtu.be/cka6lsQUMHw)

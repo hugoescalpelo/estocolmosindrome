@@ -38,3 +38,7 @@ GRANT SELECT, INSERT ON nombre_db.* TO nombre_usuario@’%’;
 ## Fuentes
 
 - Configuración de usuarios remotors https://itman.in/en/mysql-add-user-for-remote-access/
+## Referencias
+
+- [Lista de reproducción del proyecto](https://www.youtube.com/watch?v=_F277YnKmog&list=PLm5nY_UPV5A7sAQCkPrWafyoOXLW3rvgx&pp=iAQB)
+- [Tutorial: Desarrollo de Proyecto 007 - MySQL Docker Compose WSL](https://youtu.be/IqKn2B_sN14)

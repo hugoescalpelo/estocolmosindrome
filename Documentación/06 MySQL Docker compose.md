@@ -49,3 +49,8 @@ Para acceder a la linea de commandos de MySQL Server, debes abrir una terminal d
 - Tutorial de aplicaciones multicontenedores de Microsoft https://learn.microsoft.com/en-us/visualstudio/docker/tutorials/tutorial-multi-container-app-mysql
 - Documentación del archivo Compose en Docker https://docs.docker.com/compose/compose-file/
 - Tutorial de MySQL en Docker Compose https://medium.com/@chrischuck35/how-to-create-a-mysql-instance-with-docker-compose-1598f3cc1bee
+
+## Referencias
+
+- [Lista de reproducción del proyecto](https://www.youtube.com/watch?v=_F277YnKmog&list=PLm5nY_UPV5A7sAQCkPrWafyoOXLW3rvgx&pp=iAQB)
+- [Tutorial: Desarrollo de Proyecto 007 - MySQL Docker Compose WSL](https://youtu.be/IqKn2B_sN14)
