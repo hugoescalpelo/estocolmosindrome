@@ -58,7 +58,9 @@ La siguientes configuraciones son para las cámaras interiores, es decir, todas 
 1. Haz clic derecho en la cámara y selecciona la opción Edit
 2. En la sección General configura lo siguiente: Decoder = GPU, Max Framerate = 10.
 3. En la sección General, en la sección Source Type haz clic en el boton de configuraicónes. Esto abre el menú Video Source.
-4. En el menú Video Source seleccióna la sección Advanced. Configura lo siguiente: Decode GPU = 0 para configuraciones de PC con procesador sin video integrado y con tarjeta gráfica dedicada, el numero correspondiente a la tarjeta gráfica que se desea usar para equipos con multiples tarjetas gráficas ya sea integradas o dedicadas. Puedes conocer el índice de la tarjeta gráfica desde el administrador de tareas de Windows en la sección Rendimiento. GPU Decoder = cuda, Basic Authentication = On, Use HTTP1.0 = Off, Prevent JPEG Cache = On, User Agent = Mozilla/5.0, Width = 640, Height = 0, Connection Timeout = 8000, Recconect Interval = 0, Reconnect Strategy = Immediate, VLC Options = 
+4. En el menú Video Source seleccióna la sección Advanced. Configura lo siguiente: Decode GPU = 0 para configuraciones de PC con procesador sin video integrado y con tarjeta gráfica dedicada, el numero correspondiente a la tarjeta gráfica que se desea usar para equipos con multiples tarjetas gráficas ya sea integradas o dedicadas. Puedes conocer el índice de la tarjeta gráfica desde el administrador de tareas de Windows en la sección Rendimiento. GPU Decoder = cuda, Basic Authentication = On, Use HTTP1.0 = Off, Prevent JPEG Cache = On, User Agent = Mozilla/5.0, Width = 640, Height = 0, Connection Timeout = 8000, Recconect Interval = 0, Reconnect Strategy = Immediate, 
+
+    VLC Options = 
     
     :network-caching=128
     :live-caching=10
