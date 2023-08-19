@@ -118,3 +118,4 @@ En el siguiente documento se describirán una serie de guias básicas para mejor
 - [Tutorial: Desarrollo de Proyecto 009 - Instalando Agent DVR y Ejemplo con ESP32CAM](https://youtu.be/3nzBiaU9kvc)
 - [Tutorial: Desarrollo de proyecto 012 - Camera Web Server con ESP32CAM](https://youtu.be/hWVYICauV34)
 - [Tutorial: Desarrollo de proyecto 013 - Servidor de CodeProject.AI para reconocimiento facial](https://youtu.be/_mnCV-Gkf0c)
+- [Desarrollo de proyeto 014 - Configuración de detección de rostros con AgentDVR y CodeProyect.AI](https://youtu.be/_YfmRRuaYoE)
