@@ -1,0 +1,1 @@
+Este incluye las instrucciones para actualizar codeproject.ai en el contenedor

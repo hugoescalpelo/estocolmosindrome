@@ -1,0 +1,1 @@
+Este deberá explicar cómo configurar la grabación y almacenamiento del agent dvr
