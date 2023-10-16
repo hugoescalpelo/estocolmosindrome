@@ -1,0 +1,120 @@
+version: '3'
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    restart: always
+    volumes:
+      - /home/hugoe/mosquitto/config:/mosquitto/config
+      - /home/hugoe/mosquitto/data:/mosquitto/data
+      - /home/hugoe/mosquitto/log:/mosquitto/log
+    ports:
+      - 1883:1883
+      - 9001:9001
+    networks:
+      - localnetwork01
+  
+  nodered:
+    image: nodered/node-red
+    restart: always
+    volumes:
+      - /home/hugoe/nodered/data:/data
+    ports:
+      - 1880:1880
+      - 3456:3456
+    networks:
+      - localnetwork01
+
+  mySQL:
+    image: mysql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - /home/hugoe/mysql/config/config.cnf:/etc/my.cnf
+      - /home/hugoe/mysql/db:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: rootroot
+    networks:
+      - localnetwork01
+
+  grafana:
+    image: grafana/grafana-enterprise
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - localnetwork01
+
+  traccar:
+    image: traccar/traccar:latest
+    container_name: traccar
+    restart: unless-stopped
+    ports:
+      - "8082:8082"
+      - "5000-5150:5000-5150"
+    environment:
+      - "TZ=UTC"
+    volumes:
+      - /home/hugoe/traccar/data:/opt/traccar/data
+      - /home/hugoe/traccar/logs:/opt/traccar/logs
+      #- /home/hugoe/traccar/conf:/opt/traccar/conf
+    networks:
+      - localnetwork01
+
+  CodeProjectAI:
+    image: codeproject/ai-server:gpu
+    container_name: CodeProject.AI
+    ports:
+      - 32168:32168
+    volumes:
+      - /home/hugo/codeproject/ai:/etc/codeproject/ai
+      - /home/hugo/codeproject/ai:/app/modules
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
+
+  # agentdvr:
+  #   image: doitandbedone/ispyagentdvr
+  #   ports:
+  #     - "8090:8090"
+  #     - "3478:3478"
+  #     - "50000-50010:50000-50010"
+  #   volumes:
+  #     - /mnt/f/iSpy/data:/app/data
+  #   environment:
+  #     - TZ=America/Mexico_City
+  #     - UID=1000
+  #     - GID=1000
+  #   restart: always
+  #   networks:
+  #     - localnetwork01
+
+  # nextcloud:
+  #   image: nextcloud:latest
+  #   restart: always    
+  #   volumes:
+  #     - /mnt/f/nextcloud:/var/www/html
+  #     - /mnt/f/nextcloud/apps:/var/www/html/custom_apps
+  #     #- /mnt/f/nextcloud/config:/var/www/html/config
+  #     - /mnt/f/nextcloud/data:/var/www/html/data
+  #   ports:
+  #     - "8080:80"
+    
+  #   environment:
+  #     - MYSQL_HOST=mySQL
+  #     - MYSQL_PASSWORD=hugonextnext
+  #     - MYSQL_DATABASE=nextcloud
+  #     - MYSQL_USER=hugonext
+  #   networks:
+  #     - localnetwork01
+
+networks:
+  localnetwork01:
+
