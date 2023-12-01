@@ -2,7 +2,7 @@
 
 Las cámaras conectadas a [AgentDVR](https://www.ispyconnect.com/) son parte esencial del proyecto [Síndrome de Estocolmo](https://estocolmosindrome.com/), pues realizan el reconocimiento facial que detona el funcionamiento del departamento inteligente. En las notas anteriores se realizó la configuración básica, pero esta podría no ser optima para un funcionamiento fluido. En esta nota se explicará la configuración de optimización para las cámaras.
 
-**Nota**: Antes de ejcutar cualquier configuración de este documento.
+**Nota**: Antes de ejcutar cualquier configuración lee este documento completo.
 
 ## Requisitos
 
@@ -23,8 +23,7 @@ Antes de explicar las configuraciones necesarias, es importante establecer las c
 Estas configuraciones fueron probadas bajo las siguientes condiciones:
 
 - Cámaras ESP32CAM con el [programa CameraWebServer](https://github.com/hugoescalpelo/estocolmosindrome/tree/main/ESP32CAM/ESP32CAM-videoserver-static-ip-autorestart-2023) de este repositorio
-- Resolución 640x480 para todas las cámaras interiores
-- Resolución 1280x720 para la cámara de la mirilla que apunta al exterior del departamento
+- Resolución 640x480 para todas las cámaras.
 - Conexión WiFi de 2.4GHz
 - Cifrado AES-WPA2, el mas común en modems WiFi casa habitación y el predeterminado del ESP32CAM
 - Canal WiFi atomático
@@ -35,7 +34,7 @@ Estas configuraciones fueron probadas bajo las siguientes condiciones:
     - Tarjeta gráfica nVidia 1650 4GB VRAM, 16GB memoria compartida
     - Windows 10 Pro compilación 19045.3324
     - Disco interno SSD Velocidad R/W 3500MBps/3000MBps
-    - Almacenamiento externo HDD Seagate Skyhawk dual 4TB RAID 0
+    - Almacenamiento externo HDD Seagate Skyhawk dual 8TB RAID 0
 - Agenet DVR v4.4.9.0
 - CodeProject.AI 2.1.9-Beta
 - Departamento de 56m2. Este dato es importante porque garantiza una distancia no mayor a 5 metros entre cada cámara y el modem, lo que tiene influencia directa en la intesidad de la señal que recibe cada cámara.
