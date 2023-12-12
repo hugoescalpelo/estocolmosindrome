@@ -124,4 +124,4 @@ Puedes consultar los siguientes video para mas detalles
 - [Tutorial: Desarrollo de proyecto 012 - Camera Web Server con ESP32CAM](https://youtu.be/hWVYICauV34)
 - [Tutorial: Desarrollo de proyecto 013 - Servidor de CodeProject.AI para reconocimiento facial](https://youtu.be/_mnCV-Gkf0c)
 - [Desarrollo de proyeto 014 - Configuración de detección de rostros con AgentDVR y CodeProyect.AI](https://youtu.be/_YfmRRuaYoE)
-- [Desarrollo de proyecto 015 - Optimización de cámaras](https://www.youtube.com/watch?v=7vuJGMQIfXo)
+- [Desarrollo de proyecto 016 - Configuración de almacenamiento](https://www.youtube.com/watch?v=SlKqBlVCD6A)
