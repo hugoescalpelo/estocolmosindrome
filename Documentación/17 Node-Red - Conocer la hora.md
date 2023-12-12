@@ -30,7 +30,7 @@ Las funciones que se explicarán funcionan sobre el sistema del proyecto, no se 
 En este documento se describen únicamente las funciones de flow, no se explica en detalle cómo hacerlo, ya que se asume que se obtendrá del repositorio.
 
 ## Diagrama
-```
+```mermaid
 graph TD;
     A[6am Every Day] --> B[Get from OpenWeatherMap.org];
     B --> C[JSON];
