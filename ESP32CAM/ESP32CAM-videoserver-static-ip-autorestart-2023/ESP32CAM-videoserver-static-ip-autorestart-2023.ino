@@ -50,15 +50,15 @@
 // ===========================
 // Enter your WiFi credentials
 // ===========================
-const char* ssid = "********";
-const char* password = "********";
+const char* ssid = "***";
+const char* password = "***";
 
 // Start the camera
 void startCameraServer();
 // Set your Static IP address
-IPAddress local_IP(192, 168, 15, 110);
+IPAddress local_IP(192, 168, 1, 110);
 // Set your Gateway IP address
-IPAddress gateway(192, 168, 15, 1);
+IPAddress gateway(192, 168, 1, 1);
 IPAddress subnet(255, 255, 255, 0);
 
 void setupLedFlash(int pin);
